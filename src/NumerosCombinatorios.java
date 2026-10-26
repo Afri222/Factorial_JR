@@ -12,7 +12,7 @@ public class NumerosCombinatorios {
     }
 
     public static int combinatorio (int m, int n, String metodo) {
-// = m! / (n! * (m - n)!)
+        // = m! / (n! * (m - n)!)
         int resultado = 1;
 
         if ("i".equalsIgnoreCase(metodo)) {

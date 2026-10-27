@@ -66,7 +66,7 @@ public class Main {
                 .sorted()
                 .toList()
                 .reversed();
-        System.out.println(listaNombres);
+        System.out.println("Listado de nombres: " + listaNombres);
 
         double media = listaAlumnos.stream()
                 .collect(Collectors.averagingDouble(Alumno::getNota));

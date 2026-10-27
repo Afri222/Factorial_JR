@@ -1,16 +1,18 @@
 import java.time.LocalDate;
-import java.time.Month;
-import java.util.ArrayList;
-import java.util.Arrays;
+// import java.time.Month;
+// import java.util.ArrayList;
+// import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class main {
+public class Main {
     static void main(String[] args) {
         LocalDate hoy = LocalDate.now();
         LocalDate ayer = LocalDate.of(2026, 10, 25);
+        System.out.println("Hoy: " + hoy);
+        System.out.println("Ayer: " + ayer);
 
-        List<String> lista = new ArrayList<>();
+        // List<String> lista = new ArrayList<>();
 
         // Punto p1 = new Punto(3, -4);
         Punto p2 = Punto.of(3, -4) ;
@@ -48,7 +50,11 @@ public class main {
         List<Alumno> listaActualizada = listaAlumnos.stream()
                 .filter(a -> "Moisés".equalsIgnoreCase(a.getNombre()) && a.getFechaNacimiento().getYear() == 2007)
                 // .collect(Collectors.toList()); // ~ Casi deprecated
-               /* .map(a -> a.setNota( a.getNota()+1 ))  */
+                .map( a -> { if ("Moisés".equalsIgnoreCase(a.getNombre()) && a.getFechaNacimiento().getYear() == 2007) {
+                            a.setNota(a.getNota() + 1);
+                        }
+                        return a;
+                })
                 .toList();
 
         System.out.println("Lista alumnos: " + listaAlumnos);
